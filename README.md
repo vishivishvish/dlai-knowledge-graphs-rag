@@ -39,4 +39,6 @@
 
 ## ***2 - Knowledge Graph Fundamentals***
 
+- We’ve been introduced to Knowledge Graphs as a data structure that stores information in nodes and in the edges that highlight the relationships between these nodes.
+
 ***WIP - More Notes Incoming!***
