@@ -45,6 +45,28 @@
 
 <img src="https://drive.google.com/uc?export=view&id=1xrjfJnI9HYVhc10LzCh94nfRCBh9wohL">
 
+- Above, let’s assume we have a simple, one-node graph (a Person node called “Andreas”)
+- Let’s say we can represent this graph in notation as just (Person)
+- Let’s say we add another person called “Andrew” in this graph.
 
+<img src="https://drive.google.com/uc?export=view&id=1I5FMxrj15lI0MYMYMmophoN1upIxFb7_">
+
+- The data pattern (notation) for this graph would be (Person) , (Person)
+- But in case we have a relationship between these two people, where we want to encode that Andreas knows Andrew since 2024 - relationships are also data records in a Knowledge Graph.
+
+<img src="https://drive.google.com/uc?export=view&id=1x5ceIsWRrxK1DUMXfTZO3ljtsSIDvA0-">
+
+- The data pattern for this graph would be (Person) -[KNOWS]-> (Person)
+- The nodes and relationships in a Knowledge Graph are also geometrically called vertices and edges.
+- You can think of a “relationship” between nodes as involving a pair of nodes and then information about that pair.
+
+<img src="https://drive.google.com/uc?export=view&id=1_M7A8pg2mIjfwYgfEtw9l_9tv8HQdkRi">
+
+- In this sense, a relationship actually “contains” two nodes.
+- Let’s imagine a slightly more complex graph, with three nodes, one of which is also of a different type (Course) compared to the other two (Persons).
+
+<img src="https://drive.google.com/uc?export=view&id=1oC630LTJNd7NKJhpPumpu0kGRV3oRkmS">
+
+- The data pattern here is (Person)-[TEACHES]->(Course)<-[INTRODUCES]-(Person)
 
 ***WIP - More Notes Incoming!***
