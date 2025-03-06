@@ -43,4 +43,8 @@
 - Let’s look at these concepts in some more detail.
 - Nodes are data records. We’re going to explore what that means by drawing what a graph might look like, and seeing how the data patterns within the graph emerge.
 
+<img src="https://drive.google.com/uc?export=view&id=1xrjfJnI9HYVhc10LzCh94nfRCBh9wohL">
+
+
+
 ***WIP - More Notes Incoming!***
