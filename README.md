@@ -37,4 +37,6 @@
 - Lastly we’ll go through the graph creation process one more time, for a second set of SEC forms, connect the two graphs using some linking data, and see how we can use more complex graph queries to carry out retrieval across multiple sets of documents. 
 - All this together allows you to ask some very interesting questions of the SEC dataset.
 
+## ***2 - Knowledge Graph Fundamentals***
+
 ***WIP - More Notes Incoming!***
