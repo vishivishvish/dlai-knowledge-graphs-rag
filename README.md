@@ -69,6 +69,6 @@
 
 - The data pattern here is (Person)-[TEACHES]->(Course)<-[INTRODUCES]-(Person)
 
-<p style="background-color:#fd4a6180; padding:15px; margin-left:20px"> <b>Note:</b> This notebook takes about 30 seconds to be ready to use. Please wait until the "Kernel starting, please wait..." message clears from the top of the notebook before running any cells. You may start the video while you wait.</p>
+
 
 ***WIP - More Notes Incoming!***
