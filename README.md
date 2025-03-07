@@ -89,7 +89,5 @@ Image
 
 ## ***3 - Querying Knowledge Graphs***
 
--
-
-***WIP - More Notes Incoming!***
+***WIP - More Notes Coming!***
 
