@@ -76,7 +76,16 @@ Image
 - Now formally, nodes have labels. Such as the “Person” node or the “Course” node in the above graph. Labels are a way of grouping multiple nodes together.
 - Nodes, because they’re data records, also have values of course. So you can consider the label-value pairing as the dictionary-style key-value pairing that defines a node, such as Person: “Andreas”, Person: “Andrew”, Course: “Knowledge Graphs for RAG”
 
+Image
 
+- Relationships are also data records, so they have a direction, a type and properties.
+
+Image
+
+- To summarize, a Knowledge Graph is a database that stores information in nodes and relationships.
+- Both nodes and relationships can have properties (key-value pairs).
+- Nodes can be given labels to help group them together.
+- Relationships always have a type and a direction.
 
 
 ***WIP - More Notes Incoming!***
