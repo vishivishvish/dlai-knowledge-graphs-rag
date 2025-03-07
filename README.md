@@ -68,6 +68,14 @@
 <img src="https://drive.google.com/uc?export=view&id=1oC630LTJNd7NKJhpPumpu0kGRV3oRkmS">
 
 - The data pattern here is (Person)-[TEACHES]->(Course)<-[INTRODUCES]-(Person)
+- The good thing about these labels on the relationships is that, obviously, thanks to Embeddings, now we don’t need to add any other semantically similar information such as saying “Person 1 is a Teacher of the course”, because applying the embeddings to the “Teaches” nature of the relationship will already give us that meaning.
+- Here’s another small complex graph like this, with 3 nodes and 3 relationships. 
+
+Image
+
+- Now formally, nodes have labels. Such as the “Person” node or the “Course” node in the above graph. Labels are a way of grouping multiple nodes together.
+- Nodes, because they’re data records, also have values of course. So you can consider the label-value pairing as the dictionary-style key-value pairing that defines a node, such as Person: “Andreas”, Person: “Andrew”, Course: “Knowledge Graphs for RAG”
+
 
 
 
