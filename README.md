@@ -87,5 +87,9 @@ Image
 - Nodes can be given labels to help group them together.
 - Relationships always have a type and a direction.
 
+-
 
-***WIP - More Notes Incoming!***
+
+
+***WIP - More Notes Coming!***
+
