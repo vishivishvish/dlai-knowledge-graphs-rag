@@ -89,5 +89,18 @@
 
 ## ***3 - Querying Knowledge Graphs***
 
+- Now that we’ve explored the fundamental ideas behind Knowledge Graphs, let’s look at how they’re put into practice.
+- We’ll use the Cypher query language to interact with a fun Knowledge Graph that contains data about movies and actors.
+
+<img src="https://drive.google.com/uc?export=view&id=1-_Va0BUOz-8xLc2Q8SWOuiQ-JA_edG8B">
+
+- For both these types of nodes in this Knowledge Graph, Persons and Movies, they have unique types of properties. The “Person” node has a “name” property (string) and year “born” property (integer), while the “Movie” node has properties “title”, “tagline” (both strings) and year “released” (integer).
+
+<img src="https://drive.google.com/uc?export=view&id=1YbwEk2GONk2sx0elcTUQbywT-yhM8bUW">
+
+- And of course, there are many kinds of relationships that could exist between nodes belonging to the “Person” and “Movie” classes.
+
+<img src="https://drive.google.com/uc?export=view&id=1ncUIqEfIK2kJiO2JsvFDYLs68hOmA_UK">
+
 ***WIP - More Notes Incoming!***
 
