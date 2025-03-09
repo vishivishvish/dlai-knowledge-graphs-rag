@@ -89,5 +89,5 @@
 
 ## ***3 - Querying Knowledge Graphs***
 
-***WIP - More Notes Coming!***
+***WIP - More Notes Incoming!***
 
