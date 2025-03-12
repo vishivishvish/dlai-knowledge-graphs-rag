@@ -227,4 +227,5 @@ kg.query(cypher)
 ```
 
 - **Purpose**: Finds co-actors of Tom Hanks and returns their names along with the movie titles they acted in together.
-- **Syntactical Nuances**:
+
+***To be continued***
