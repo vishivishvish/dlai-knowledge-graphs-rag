@@ -102,5 +102,5 @@
 
 <img src="https://drive.google.com/uc?export=view&id=1ncUIqEfIK2kJiO2JsvFDYLs68hOmA_UK">
 
-***WIP - More Notes Incoming!***
+***WIP - More Notes Coming!***
 
