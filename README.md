@@ -179,13 +179,51 @@
   
 - Let’s say we’re searching for the node pertaining to the movie Cloud Atlas:
   
-`cypher = ””MATCH (clat:Movie {title: ‘Cloud Atlas’})`
+`cypher = ””MATCH (cloudAtlas:Movie {title: ‘Cloud Atlas’})`
 
-`RETURN clat”””;`
+`RETURN cloudAtlas”””;`
 
 `print(kg.query(cypher));`
 
 - We get:
+
+`[{‘cloudAtlas’: {‘tagline’: ‘Everything is connected’, ‘title’: ‘Cloud Atlas’, ‘released’: 2012}}]`
+
+- Let’s say we’re only interested in the value of the ‘released’ property of this node, and not the entire node.
+- We can modify the Cypher query like so:
+
+`cypher = ””MATCH (cloudAtlas:Movie {title: ‘Cloud Atlas’})`
+
+`RETURN cloudAtlas.released”””;`
+
+- We will get:
+
+`[{‘cloudAtlas.released’: 2012}]`
+
+- We can also return two properties from the node if we want, like so:
+
+`cypher = ””MATCH (cloudAtlas:Movie {title: ‘Cloud Atlas’})`
+
+`RETURN cloudAtlas.released, cloudAtlas.tagline”””;`
+
+- We would get:
+
+`[{‘cloudAtlas.released’: 2012, ‘cloudAtlas.tagline’: ‘Everything is connected’}]`
+
+- Let’s say we’re looking for the titles of movies in this database that were released in the nineties (1990 <= release year < 2000).
+- Similar to SQL, this would be a filter in our Cypher query like so:
+
+`cypher = ””MATCH (nineties:Movie)`
+
+`WHERE nineties.released >= 1990`
+
+`AND nineties.released < 2000`
+
+`RETURN nineties.title“””;`
+
+- Our return value:
+
+<img src="https://drive.google.com/uc?export=view&id=1N_BgoWm40y8JgyDgetgROakVf7wSBZAg">
 
 
 ***WIP - More Notes Coming!***
