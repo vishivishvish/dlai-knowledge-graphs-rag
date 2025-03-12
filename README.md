@@ -102,5 +102,12 @@
 
 <img src="https://drive.google.com/uc?export=view&id=1ncUIqEfIK2kJiO2JsvFDYLs68hOmA_UK">
 
+- To write Cypher queries in Python, we will use a multi-line string, delineated by the triple quotation mark (“””) symbol.
+- As an example:
+“””MATCH (n)
+RETURN count(n)”””
+- In the above query, the MATCH keyword is usually looking for a pattern-matching condition. In the absence of one, it just selects all the nodes in the graph. We assign the results of that query to a variable “n”, and when we RETURN the count(n), that should give us the number of nodes in the entire graph.
+- 
+
 ***WIP - More Notes Coming!***
 
