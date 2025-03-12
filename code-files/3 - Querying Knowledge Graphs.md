@@ -1,4 +1,4 @@
-Certainly! Let's break down the provided script into detailed sections, explaining each block of code, its syntactical nuances, and how it contributes to the overall objective of querying and manipulating a Neo4j Knowledge Graph using Cypher in Python.
+Let's break down the provided script into detailed sections, explaining each block of code, its syntactical nuances, and how it contributes to the overall objective of querying and manipulating a Neo4j Knowledge Graph using Cypher in Python.
 
 ### Script Overview
 
