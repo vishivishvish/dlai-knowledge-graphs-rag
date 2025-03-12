@@ -111,44 +111,81 @@
 
 - In the above query, the MATCH keyword is usually looking for a pattern-matching condition. In the absence of one, it just selects all the nodes in the graph. We assign the results of that query to a variable “n”, and when we RETURN the count(n), that should give us the number of nodes in the entire graph.
 - Now, when we run:
-`result = kg.query(cypher);
-result`
+  
+`result = kg.query(cypher);`
+
+`result`
+
 - We get the output as:
+  
 `[{‘count(n)’: 171}]`
+
 - So we see that the output of the Knowledge Graph query is a list with each row having a dictionary. In this case, due to only 1 row, there’s only one dictionary. The key of the dictionary is based on what we’ve returned in the RETURN clause - which in this case is ‘count(n)’.
 - We have the option of using an alias to rename this key. So:
-`cypher = “””MATCH (n)
-RETURN count(n) AS numberOfNodes”””;
-result = kg.query(cypher);
-result`
+  
+`cypher = “””MATCH (n)`
+
+`RETURN count(n) AS numberOfNodes”””;`
+
+`result = kg.query(cypher);`
+
+`result`
+
 - Now the output we would get would be:
+  
 `[{‘numberOfNodes’: 171}]`
+
 - Now, if we only want to pattern-match a specific kind of node with the MATCH keyword, we can add a colon (:) symbol and mention the kind of node, like so:
-`cypher = “””MATCH (n:Movie)
-RETURN count(n) AS numberOfMovies”””;`
+  
+`cypher = “””MATCH (n:Movie)`
+
+`RETURN count(n) AS numberOfMovies”””;`
+
 - We would get the output as:
+  
 `[{‘numberOfMovies’: 38}]`
+
 - This of course shows that out of 171 nodes, we have 38 movie nodes in this graph.
 - The variable ‘n’ is of course, also just a placeholder. We can change that to ‘m’ to improve readability.
-`cypher = “””MATCH (m:Movie)
-RETURN count(m) AS numberOfMovies”””;`
+  
+`cypher = “””MATCH (m:Movie)`
+
+`RETURN count(m) AS numberOfMovies”””;`
+
 - Now, to get the number of persons:
-`cypher = “””MATCH (p:Person)
-RETURN count(p) AS numberOfPeople”””;`
-- `[{‘numberOfPeople’: 133}]`
-- If we want to return a specific person, let’s say Tom Hanks, we have to write the cypher query like so:
-`cypher = “””MATCH (tom:Person {name: ‘Tom Hanks’})
-RETURN tom”””;
-print(kg.query(cypher));`
+  
+`cypher = “””MATCH (p:Person)`
+
+`RETURN count(p) AS numberOfPeople”””;`
+
 - What we get is:
+
+`[{‘numberOfPeople’: 133}]`
+
+- If we want to return a specific person, let’s say Tom Hanks, we have to write the cypher query like so:
+  
+`cypher = “””MATCH (tom:Person {name: ‘Tom Hanks’})`
+
+`RETURN tom”””;`
+
+`print(kg.query(cypher));`
+
+- What we get is:
+  
 `[{‘tom’: {‘born’: 1956, ‘name’: ‘Tom Hanks’}}]`
+
 - The key of the main dictionary stays the same as the variable name we used in the Cypher query.
-- We get a list with only one dictionary row, meaning only one node has matched our search condition
-- Let’s say we’re searching for the node pertaining to the movie Cloud Atlas
-`cypher = ””MATCH (clat:Movie {title: ‘Cloud Atlas’})
-RETURN clat”””;
-print(kg.query(cypher));`
-We get:
+- We get a list with only one dictionary row, meaning only one node has matched our search condition.
+  
+- Let’s say we’re searching for the node pertaining to the movie Cloud Atlas:
+  
+`cypher = ””MATCH (clat:Movie {title: ‘Cloud Atlas’})`
+
+`RETURN clat”””;`
+
+`print(kg.query(cypher));`
+
+- We get:
 
 
 ***WIP - More Notes Coming!***
