@@ -226,5 +226,5 @@
 <img src="https://drive.google.com/uc?export=view&id=1N_BgoWm40y8JgyDgetgROakVf7wSBZAg">
 
 
-***WIP - More Notes Incoming!***
+***WIP - More Notes Coming!***
 
