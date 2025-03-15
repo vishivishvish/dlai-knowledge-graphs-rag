@@ -1,4 +1,4 @@
-Below is **[Grok's](https://grok.com)** detailed block-by-block description of the provided Python code, which interacts with a Neo4j graph database using the Cypher query language through the LangChain connector. For each block, I’ll explain **what the code is trying to do** and highlight **syntactical nuances** to keep in mind regarding Python and Cypher.
+Below is **[Grok's](https://grok.com)** detailed block-by-block description of the Python code, which interacts with a Neo4j graph database using the Cypher query language through the LangChain connector. For each block, I’ll explain **what the code is trying to do** and highlight **syntactical nuances** to keep in mind regarding Python and Cypher.
 
 ---
 
