@@ -225,6 +225,84 @@
 
 <img src="https://drive.google.com/uc?export=view&id=1N_BgoWm40y8JgyDgetgROakVf7wSBZAg">
 
+- You can also query more complex relationships on such a graph, and return only those nodes that match the condition listed in your query, for example.
+
+`cypher = “””MATCH (actor:Person)-[:ACTED_IN]->(movie:Movie)`
+
+`RETURN actor.name, movie.title LIMIT 10”””`
+
+`kg.query(cypher)`
+
+- The above query returns 10 actor-movie pairs from the database, where the actor acted in a movie.
+
+<img src="https://drive.google.com/uc?export=view&id=1emXZejzVNSH9DXQulHiN16ahfOYNUpu0">
+
+- As another example, let’s return all the movies that Tom Hanks acted in.
+  
+`cypher = “””MATCH (tom:Person {name: ‘Tom Hanks’})-[:ACTED_IN]->(tomHanksMovies: Movie)`
+
+`RETURN tom.name, tomHanksMovies.title”””`
+
+`kg.query(cypher)`
+
+<img src="https://drive.google.com/uc?export=view&id=1SKk62iB8OxQLAJKRD_troUznEh4paTj_">
+
+- We can go more complex. Let’s return the list of every co-actor of Tom Hanks (an actor who has acted with Tom Hanks in a movie) and which movie they co-acted in.
+  
+`cypher = “””MATCH (tom:Person {name:’Tom Hanks’})-[:ACTED_IN]->(m: Movie)<-[:ACTED_IN]-(coActors: Person)`
+
+`RETURN coActors.name, m.title”””`
+
+<img src="https://drive.google.com/uc?export=view&id=1E-9LOtDlYyCdiw8F1LNGnIF535bhpxS8">
+
+- The above image is truncated, as the list of Tom Hanks’ co-actors in this graph is quite extensive.
+- It’s important to note that the node type that we’re providing in the Cypher syntax (ex: “:Person” or “:Movie”) is actually optional for the purpose of just getting the code to run. The Cypher query will run even without us specifying the node type. Specifying the node type is only mandatorily needed while querying either as a redundancy to weed out any wrong node types encoded in the graph, or if we’re deliberately only trying to retrieve specific types of nodes from the graph. Otherwise, it’s optional. So in the above queries, since the graph has already encoded all the movies and actors into the right node types, the above queries would work perfectly fine even if we didn’t explicitly specify node type while querying. Ex: MATCH (tom) is enough, instead of MATCH (tom:Person). 
+- But of course, it’s always a good practice to specify node types.
+- Now, there is one wrong entry in this Knowledge Graph. Emil Eifrem is listed as an actor in The Matrix, but he’s not an actor, he’s actually the Founder of Neo4j. So we can show how to list out the acting relationships of this node, and how to delete the acting relationship with The Matrix.
+
+`cypher = “””MATCH (emil:Person {name:’Emil Eifrem’})-[:ACTED_IN]->(movie:Movie)`
+
+`RETURN emil.name, movie.title“””`
+
+`kg.query(cypher)`
+
+- This returns:
+
+`[{‘emil.name’: ‘Emil Eifrem’, ‘movie.title’: ‘The Matrix’}]`
+
+- Now, we want to delete the acting relationship, without deleting the node itself. So the query is:
+
+`cypher = “””MATCH (emil:Person name:’Emil Eifrem’)-[acted_in:ACTED_IN]->(movie:Movie)`
+
+`DELETE acted_in”””`
+
+`kg.query(cypher)`
+
+- Running the above query just returns an empty list [], as only a deletion has been performed.
+- If you notice above, we gave a variable name “acted_in” to the edge itself “ACTED_IN”, and we used the variable name to perform the deletion.
+- We can create a new node for Andreas in this graph with the following query:
+
+`cypher = “””CREATE (andreas: Person {name:’Andreas’})`
+
+`RETURN andreas”””`
+
+`kg.query(cypher)`
+
+- We can also create a new relationship between Andreas and Emil (who work together at Neo4j), by matching to retrieve the two nodes and merging a relationship between them:
+
+`cypher = “””MATCH (andreas:Person {name:’Andreas’}), (emil:Person {name;’Emil Eifrem’})`
+
+`MERGE (andreas)-[hasRelationship:WORKS_WITH]->(emil)`
+
+`RETURN andreas, hasRelationship, emil”””`
+
+`kg.query(cypher)`
+
+- This will return:
+
+<img src="https://drive.google.com/uc?export=view&id=1al2-MIMxtCts8sCN_7M2CMgQWADT19bE">
+
+## ***4 - Preparing Text for RAG***
 
 ***WIP - More Notes Incoming!***
 
