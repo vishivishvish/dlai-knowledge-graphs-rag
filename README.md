@@ -304,5 +304,5 @@
 
 ## ***4 - Preparing Text for RAG***
 
-***WIP - More Notes Coming!***
+***WIP - More Notes Incoming!***
 
