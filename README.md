@@ -1,4 +1,4 @@
-# **Knowledge Graphs for RAG **
+# **Knowledge Graphs for RAG**
 
 **[Deeplearning.ai | Neo4j](https://www.deeplearning.ai/short-courses/knowledge-graphs-rag/)**
 
