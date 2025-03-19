@@ -325,9 +325,9 @@
 
 `{`
 
-``\`vector.dimensions\`: 1536,`` (escape backslash \ because Markdown backticks are interfering with Cypher code backticks)
+` ``vector.dimensions``: 1536, ` 
 
-``\`vector.similarity_function\`: ‘cosine’`` (escape backslash \ because Markdown backticks are interfering with Cypher code backticks)
+` ``vector.similarity_function``: ‘cosine’ ` 
 
 `}`
 
