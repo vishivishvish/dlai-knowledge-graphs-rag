@@ -304,5 +304,37 @@
 
 ## ***4 - Preparing Text for RAG***
 
+- RAG systems start by using vector representations of text to match your prompt to relevant sections within the unstructured data.
+- So in order to be able to find relevant sections of text in a Knowledge Graph in the same way, you’ll need to create embeddings of the text fields in your graph.
+- Here’s how to do this:
+- First, we can write a Cypher query to actually create a Vector Index affiliated with this Knowledge Graph.
+
+`kg.query(`
+
+`“””`
+
+`CREATE VECTOR INDEX movie_tagline_embeddings IF NOT EXISTS`
+
+`FOR (m:Movie) ON (m.taglineEmbedding)`
+
+`OPTIONS`
+
+`{`
+
+`indexConfig:`
+
+`{`
+
+``\`vector.dimensions\`: 1536,`` (escape backslash \ because Markdown backticks are interfering with Cypher code backticks)
+
+``\`vector.similarity_function\`: ‘cosine’`` (escape backslash \ because Markdown backticks are interfering with Cypher code backticks)
+
+`}`
+
+`}“””`
+
+`)`
+
+
 ***WIP - More Notes Incoming!***
 
