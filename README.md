@@ -379,10 +379,8 @@
 `token: $openAiApiKey,`
 
 `endpoint: $openAiEndpoint`
-
-        		`}`
           
-`) AS vector`
+`}) AS vector`
 
 `CALL db.create.setNodeVectorProperty(movie, "taglineEmbedding", vector)`
 
