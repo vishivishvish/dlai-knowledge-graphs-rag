@@ -336,7 +336,28 @@
 `)`
 
 - Note: Double backticks `` for opening & closing have been used above to avoid interfering with the Markdown backticks (which are needed for code formatting), but only single backticks ` for opening & closing are actually to be used for the code to run.
-- 
+- In the above Cypher query, we’re creating a Vector Index, we give it a name “movie_tagline_embeddings” (and we add the IF NOT EXISTS clause, meaning this index will only be created if it doesn’t already exist). 
+- The FOR (m:Movie) clause implies we’re creating this Vector Index on properties associated with the Movie node type. 
+- 1536 is chosen as the vector dimension since it’s the default size for OpenAI’s embedding model, and OpenAI also recommends using Cosine Similarity.
+- The above Cypher query will just return an empty list because it’s merely the command to create the Vector Index. To actually see the created Vector Index:
+
+`kg.query`
+
+`(`
+
+`“””`
+
+`SHOW VECTOR INDEXES`
+
+`“””`
+
+`)`
+
+- This will return:
+
+<img src="https://drive.google.com/uc?export=view&id=1VOxumGlbPTjbhFYG8Q3vQ_JqJ6YkzXyc">
+
+
 
 ***WIP - More Notes Incoming!***
 
