@@ -357,6 +357,44 @@
 
 <img src="https://drive.google.com/uc?export=view&id=1VOxumGlbPTjbhFYG8Q3vQ_JqJ6YkzXyc">
 
+- Now that we have created the Vector Index, we can populate it with data.
+- Here is the query to do so:
+
+`kg.query`
+
+`(`
+
+`"""`
+
+`MATCH (movie:Movie) WHERE movie.tagline IS NOT NULL`
+
+`WITH movie, genai.vector.encode`
+
+`(`
+
+`movie.tagline, "OpenAI",` 
+
+`{`
+
+`token: $openAiApiKey,`
+
+`endpoint: $openAiEndpoint`
+
+        		`}`
+          
+`) AS vector`
+
+`CALL db.create.setNodeVectorProperty(movie, "taglineEmbedding", vector)`
+
+`""",`
+
+`params = {"openAiApiKey":OPENAI_API_KEY, "openAiEndpoint": OPENAI_ENDPOINT}`
+
+`)`
+
+- In the above query, we’re going to match movies (nodes with the label ‘Movie’), where the movie tagline is not null (so only those movies which have taglines). 
+- In the next part of the query, we’re going to take that movie and calculate an embedding for the tagline.
+- We’re using a function, genai.vector.encode to calculate this embedding. In this function, we pass in the value that we want to calculate the embedding for (the movie.tagline), the embedding model to use (“OpenAI”), and because OpenAI requires a key, we pass in a configuration - token: $openAiApiKey <- this is called a query parameter. 
 
 
 ***WIP - More Notes Incoming!***
