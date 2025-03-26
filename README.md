@@ -395,5 +395,5 @@
 - We’re using a function, genai.vector.encode to calculate this embedding. In this function, we pass in the value that we want to calculate the embedding for (the movie.tagline), the embedding model to use (“OpenAI”), and because OpenAI requires a key, we pass in a configuration - token: $openAiApiKey <- this is called a query parameter. 
 
 
-***WIP - More Notes Incoming!***
+***WIP - More Notes Coming!***
 
