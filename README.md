@@ -6,7 +6,7 @@
 
 **Andreas Kollegger - Developer Evangelist & GenAI Lead, Neo4j**
 
-***Notes by Vishnu Subramanian - AI/ML Computational Science Associate Manager, Accenture | AI Researcher & Instructor, BloomTech***
+***Notes by Vishnu Subramanian***
 
 ***Wednesday, 03/05/2025 - Monday, 03/24/2025***
 
